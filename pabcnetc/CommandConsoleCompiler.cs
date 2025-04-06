@@ -146,6 +146,10 @@ namespace PascalABCCompiler
         {
             responseSocket.SendFrame(string.Format("{0} {1}", command, arg) + ConsoleCompilerConstants.DataSeparator);
         }
+        void SendString(string arg)
+        {
+            responseSocket.SendFrame(arg);
+        }
         void SendCommand(int command)
         {
             responseSocket.SendFrame(command + ConsoleCompilerConstants.DataSeparator);
@@ -222,7 +226,7 @@ namespace PascalABCCompiler
                     {
                         SourceLocation sl;
                         if ((sl = (compiler.ErrorsList[i] as LocatedError).SourceLocation) != null)
-                            resultBuilder.Append(string.Format("[{0},{1}] {2}: {3}", sl.BeginPosition.Line, sl.BeginPosition.Column, Path.GetFileName(sl.FileName), compiler.ErrorsList[i].Message));
+                            resultBuilder.Append(string.Format("[{0},{1}] {2}: {3}", sl.BeginPosition.Line, sl.BeginPosition.Column, Path.GetFullPath(sl.FileName).Replace(@"\",@"/"), compiler.ErrorsList[i].Message));
                         else
                             resultBuilder.Append(compiler.ErrorsList[i]);
                     }
@@ -236,7 +240,7 @@ namespace PascalABCCompiler
             {
                 resultBuilder.Append(string.Format(StringResources.Get("OK_{0}MS_{1}LINES"), (DateTime.Now - DateTime.Now).TotalMilliseconds, compiler.LinesCompiled));
             }
-            SendCommand();
+            SendString(resultBuilder.ToString());
         }
 
         bool executeCommand(string line)
