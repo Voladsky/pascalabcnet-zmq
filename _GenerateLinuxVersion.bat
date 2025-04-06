@@ -9,7 +9,7 @@ mkdir Release\PascalABCNETLinux\Highlighting\
 mkdir Release\PascalABCNETLinux\LanguageKits\
 del Release\PascalABCNETLinux.zip
 
-
+copy bin\AsyncIO.dll Release\PascalABCNETLinux\AsyncIO.dll
 copy bin\CodeCompletion.dll Release\PascalABCNETLinux\CodeCompletion.dll
 copy bin\Compiler.dll Release\PascalABCNETLinux\Compiler.dll
 copy bin\CompilerTools.dll Release\PascalABCNETLinux\CompilerTools.dll
@@ -27,6 +27,7 @@ copy bin\Mono.Cecil.dll Release\PascalABCNETLinux\Mono.Cecil.dll
 copy bin\Mono.Debugger.Soft.dll Release\PascalABCNETLinux\Mono.Debugger.Soft.dll
 copy bin\mono_pabcIDE.bat Release\PascalABCNETLinux\mono_pabcIDE.bat
 copy bin\mono_pabcnetc.bat Release\PascalABCNETLinux\mono_pabcnetc.bat
+copy bin\NetMQ.dll Release\PascalABCNETLinux\NetMQ.dll
 copy bin\NETGenerator.dll Release\PascalABCNETLinux\NETGenerator.dll
 copy bin\OptimizerConversion.dll Release\PascalABCNETLinux\OptimizerConversion.dll
 copy bin\LanguageIntegrator.dll Release\PascalABCNETLinux\LanguageIntegrator.dll

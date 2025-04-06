@@ -21,6 +21,9 @@
   <ItemGroup>
     <Content Include="App.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NetMQ" Version="4.0.0.1" />
+  </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\Localization\Localization.csproj" />

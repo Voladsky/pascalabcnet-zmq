@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PABCNETC": {
+      "commandName": "Project",
+      "commandLineArgs": "/noconsole commandmode"
+    }
+  }
+}
